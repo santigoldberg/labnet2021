@@ -18,7 +18,7 @@ namespace tp1
             {
                 Console.WriteLine("Por favor ingrese un numero entero");
             }
-            cantidadOmnibus = cantidadOmnibus;
+            
             
             Console.WriteLine("ingrese la cantidad de Taxis");
             int cantidadTaxis;
@@ -26,7 +26,7 @@ namespace tp1
             {
                 Console.WriteLine("Por favor ingrese un numero entero");
             }
-            cantidadTaxis = cantidadTaxis;
+            
 
 
 
