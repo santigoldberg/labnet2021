@@ -47,7 +47,7 @@ namespace tp2
             }
             catch (DivideByZeroException ex)
             {
-                Console.WriteLine("No te enseñaron que no se puede dividir por cero en la primaria?");
+                Console.WriteLine("Habiendo tantos numeros querés dividir por cero????");
                 Console.WriteLine(ex.Message);
 
             }
@@ -67,8 +67,9 @@ namespace tp2
             finally
             {
                 Console.WriteLine("La operación terminó");
-                Console.ReadLine();
+                
             }
         }
+        
     }
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DividirExtensions.cs" />
+    <Compile Include="Logic.cs" />
     <Compile Include="PracticaExceptions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
