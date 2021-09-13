@@ -16,5 +16,11 @@ namespace tp2
         {
             MetodoConInteger(int.Parse("Esto es una cadena para que rompa"));
         }
+
+
+        public static void ThrowCustomException()
+        {
+            throw new CustomException();
+        }
     }
 }
