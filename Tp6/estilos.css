@@ -1,0 +1,41 @@
+
+form {
+    background-color:gray;
+    font-family: serif;
+    font-style:italic;
+    color: white;
+}
+
+.titpag {
+    font-size: 2em;
+    color:black ;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+.subtitpag {
+    
+    color:black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+
+.camporadio {
+    margin-top: 15px;
+}
+.campoformulario label {
+    display: block;
+}
+
+
+.botoncrear {
+    padding: 10px;
+    background-color: dodgerblue;
+    border: 1px solid darkblue;
+    color: white;
+    margin: 5px;
+    display: inline-block;
+}
+
+.seccion{
+    border: 1px solid white;
+}

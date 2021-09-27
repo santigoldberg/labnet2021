@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="scripts.js"></script>
+    <title>Tp6</title>
+    <style>
+        .campoedad {
+            width: 40px;            
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 class="titpag">CONTACTO</h1>
+        <h2 class="subtitpag">Completa tus datos</h2>
+        <form action="" method="post" style="width: 300px" onsubmit="chequear(event)">
+            <fieldset class="seccion">
+                <legend>Informacion Personal:</legend>
+
+                <div class="campoformulario">
+                    <label for="name">Nombre:</label>
+                    <input id="name" type="text" name="nombre" />
+                </div>
+                <div class="campoformulario">
+                    <label for="lastName">Apellido:</label>
+                    <input id="lastName" type="text" name="apellido" />
+                </div>
+                <div class="campoformulario">
+                    <label>Edad:</label>
+                    <input class="campoedad" type="text" name="edad" />
+                </div>
+                <div class="campoformulario camporadio" >
+                    <label> <input type="radio" name="sexo" value="masculino" /> Masculino</label>
+                    <label> <input type="radio" name="sexo" value="femenino" /> Femenino</label>
+                    <label> <input type="radio" name="sexo" value="otro" /> Otro</label>
+                </div>
+
+            </fieldset>
+            <fieldset class="seccion">
+                <legend>Informacion Adicional:</legend>
+
+                <div class="campoformulario">
+                    <label>Empresa:</label>
+                    <input type="text" name="empresa" />
+                </div>
+            </fieldset>
+            <div>
+                <input class="botoncrear" type="submit" value="Submit" />                            
+                <input type="button" value="Limpiar" onclick="limpiar()"/>
+            </div>
+        </form>
+
+
+    </section>
+
+</body>
+</html>
