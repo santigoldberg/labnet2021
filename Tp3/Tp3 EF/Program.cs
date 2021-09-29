@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tp3.EF.Entities;
-using Tp3.EF.Logic;
+using Tp4.EF.Entities;
+using Tp4.EF.Logic;
 
-namespace Tp3.EF
+namespace Tp4.EF
 {
     class Program
     {

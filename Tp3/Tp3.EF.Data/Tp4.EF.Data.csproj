@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB2D42D9-3AEF-4357-A2EF-4A4EC6363462}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Tp3_EF</RootNamespace>
-    <AssemblyName>Tp3 EF</AssemblyName>
+    <ProjectGuid>{19EA5537-9FAD-498D-B9DF-8974408D247B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tp3.EF.Data</RootNamespace>
+    <AssemblyName>Tp3.EF.Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="NorthwindContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,13 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tp3.EF.Entitties\Tp3.EF.Entitties.csproj">
-      <Project>{0BA4832F-BB4B-476A-B9E6-E6DA23D47022}</Project>
-      <Name>Tp3.EF.Entitties</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tp3.EF.Logic\Tp3.EF.Logic.csproj">
-      <Project>{469C5E6B-4B60-46E7-8590-E5740F01EDFD}</Project>
-      <Name>Tp3.EF.Logic</Name>
+    <ProjectReference Include="..\Tp3.EF.Entitties\Tp4.EF.Entitties.csproj">
+      <Project>{0ba4832f-bb4b-476a-b9e6-e6da23d47022}</Project>
+      <Name>Tp4.EF.Entitties</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
