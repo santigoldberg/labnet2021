@@ -1,0 +1,35 @@
+﻿@model List<Tp7.MVC.Models.CategoriesView>
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<h1>Lista de Categorias</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID Categoria</th>
+            <th scope="col">Nombre Categoria</th>
+            <th scope="col">Descripcion</th>    
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th scope="row">@category.Id</th>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>@Html.ActionLink("Borrar", "Delete", new { id = category.Id}, new { onclick ="return confirm('Desea borrar el registro?')"} )</td>
+            </tr>
+
+        }
+    </tbody>   
+</table>
+
+<div>
+    @Html.ActionLink("Insertar nueva categoria", "Insert")
+</div>

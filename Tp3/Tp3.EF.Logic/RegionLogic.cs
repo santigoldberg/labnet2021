@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tp4.EF.Data;
-using Tp4.EF.Entities;
+using Tp7.Data;
+using Tp7.Entities;
 
-namespace Tp4.EF.Logic
+namespace Tp7.Logic
 {
     public class RegionLogic : BaseLogic , IABMLogic<Region>
     {

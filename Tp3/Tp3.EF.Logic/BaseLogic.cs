@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tp4.EF.Data;
+using Tp7.Data;
 
-namespace Tp4.EF.Logic
+namespace Tp7.Logic
 {
     public abstract class BaseLogic
     {
