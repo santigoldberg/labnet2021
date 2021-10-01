@@ -14,17 +14,26 @@ namespace Tp7.MVC.Controllers
         // GET: Categories
         public ActionResult Index()
         {
-            var categoriesLogic = new CategoriesLogic();
-            List<Categories> categories = categoriesLogic.GetAll();
-
-            List<CategoriesView> categoryView = categories.Select(s => new CategoriesView 
+            try
             {
-                Id = s.CategoryID,
-                Name = s.CategoryName,
-                Description = s.Description
-            }).ToList();
+                var categoriesLogic = new CategoriesLogic();
+                List<Categories> categories = categoriesLogic.GetAll();
 
-            return View(categoryView);
+                List<CategoriesView> categoryView = categories.Select(s => new CategoriesView
+                {
+                    Id = s.CategoryID,
+                    CategoryName = s.CategoryName,
+                    Description = s.Description
+                }).ToList();
+
+                return View(categoryView);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Error", ex);
+            }         
+
+            
         }
 
         public ActionResult Insert()
@@ -37,7 +46,7 @@ namespace Tp7.MVC.Controllers
         {
             try
             {
-                Categories categoryEntity = new Categories { CategoryName = categoryView.Name, Description = categoryView.Description };
+                Categories categoryEntity = new Categories { CategoryName = categoryView.CategoryName, Description = categoryView.Description, CategoryID = categoriesLogic.MaxID()+1 };
                 
                 categoriesLogic.Add(categoryEntity);
 
@@ -46,14 +55,47 @@ namespace Tp7.MVC.Controllers
             catch (Exception ex)
             {
 
-                return RedirectToAction("Index", "Error");
+                return RedirectToAction("Index", "Error", ex);
             }
         }
 
         public ActionResult Delete(int id)
         {
-            categoriesLogic.Delete(id);
-            return RedirectToAction("Index");
+            try
+            {
+                categoriesLogic.Delete(id);
+                return RedirectToAction("Index");
+
+            }
+            catch (Exception ex)
+            {
+
+                return RedirectToAction("Index","error", ex);
+            }
+            
+        }
+
+        public ActionResult Update(Categories category)
+        {
+            return View("Update");
+        }
+
+        [HttpPost]
+        public ActionResult Update(CategoriesView categoryView)
+        {
+            try
+            {
+                Categories categoryEntity = new Categories { CategoryName = categoryView.CategoryName, Description = categoryView.Description, CategoryID = categoryView.Id };
+
+                categoriesLogic.Update(categoryEntity);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+
+                return RedirectToAction("Index", "Error", ex);
+            }
         }
     }
 }

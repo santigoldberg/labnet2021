@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tp7.Entities;
 
 namespace Tp7.Logic
@@ -33,6 +30,7 @@ namespace Tp7.Logic
             var categoryUpdate = context.Categories.Find(category.CategoryID);
 
             categoryUpdate.CategoryName = category.CategoryName;
+            categoryUpdate.Description = category.Description;
 
             context.SaveChanges();
         }

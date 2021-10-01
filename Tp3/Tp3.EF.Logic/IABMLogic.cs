@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tp7.Entities;
+﻿using System.Collections.Generic;
 
 namespace Tp7.Logic
 {
