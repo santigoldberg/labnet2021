@@ -30,7 +30,7 @@ namespace Tp7.MVC.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", "Error", ex);
+                return RedirectToAction("Index", "Error", ex.Message);
             }         
 
             
@@ -55,7 +55,7 @@ namespace Tp7.MVC.Controllers
             catch (Exception ex)
             {
 
-                return RedirectToAction("Index", "Error", ex);
+                return RedirectToAction("Index", "Error", ex.Message);
             }
         }
 
@@ -70,7 +70,7 @@ namespace Tp7.MVC.Controllers
             catch (Exception ex)
             {
 
-                return RedirectToAction("Index","error", ex);
+                return RedirectToAction("Index","Error", ex.Message);
             }
             
         }
@@ -94,7 +94,7 @@ namespace Tp7.MVC.Controllers
             catch (Exception ex)
             {
 
-                return RedirectToAction("Index", "Error", ex);
+                return RedirectToAction("Index", "Error", ex.Message);
             }
         }
     }

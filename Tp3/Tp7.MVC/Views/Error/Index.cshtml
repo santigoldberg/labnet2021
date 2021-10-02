@@ -1,5 +1,9 @@
-﻿@model Exception
+﻿@model Tp7.MVC.Models.ErrorView
+
+@{
+    ViewBag.Title = "Categories Page";
+}
 
 <h1>Se produjo un error</h1>
-<label></label>@Html.Label(Model.Message)
+<label>@Model.mensajeError </label>
 
