@@ -37,16 +37,7 @@ namespace Tp7.Logic
 
         public int MaxID()
         {
-            int maxId = 0;
-            foreach (Categories category in this.GetAll())
-            {
-                if (maxId < category.CategoryID)
-                {
-                    maxId = category.CategoryID;
-                }
-
-            }
-            return maxId;
+            return context.Categories.Max(c => c.CategoryID); 
 
         }
     }

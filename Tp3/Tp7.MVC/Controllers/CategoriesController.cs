@@ -46,7 +46,7 @@ namespace Tp7.MVC.Controllers
         {
             try
             {
-                Categories categoryEntity = new Categories { CategoryName = categoryView.CategoryName, Description = categoryView.Description, CategoryID = categoriesLogic.MaxID()+1 };
+                Categories categoryEntity = new Categories { CategoryName = categoryView.CategoryName, Description = categoryView.Description};
                 
                 categoriesLogic.Add(categoryEntity);
 
@@ -70,7 +70,7 @@ namespace Tp7.MVC.Controllers
             catch (Exception ex)
             {
 
-                return RedirectToAction("Index","Error", ex.Message);
+                return RedirectToAction("Index","Error", new { ex.Message });
             }
             
         }
