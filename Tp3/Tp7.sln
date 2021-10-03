@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp7.Entitties", "Tp3.EF.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp7.MVC", "Tp7.MVC\Tp7.MVC.csproj", "{2A340BE6-D017-410B-A9E0-D11F730F6211}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp8.WebApi", "Tp8.WebApi\Tp8.WebApi.csproj", "{1DC2A97D-66B3-4599-B118-1C331C1FAEC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2A340BE6-D017-410B-A9E0-D11F730F6211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A340BE6-D017-410B-A9E0-D11F730F6211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A340BE6-D017-410B-A9E0-D11F730F6211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC2A97D-66B3-4599-B118-1C331C1FAEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC2A97D-66B3-4599-B118-1C331C1FAEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC2A97D-66B3-4599-B118-1C331C1FAEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC2A97D-66B3-4599-B118-1C331C1FAEC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
