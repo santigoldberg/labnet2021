@@ -16,7 +16,7 @@ namespace Tp7.MVC.Controllers
         {
             try
             {
-                var categoriesLogic = new CategoriesLogic();
+                
                 List<Categories> categories = categoriesLogic.GetAll();
 
                 List<CategoriesView> categoryView = categories.Select(s => new CategoriesView
