@@ -50,6 +50,7 @@ namespace Tp7.MVC.Controllers
                 
                 categoriesLogic.Add(categoryEntity);
 
+
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

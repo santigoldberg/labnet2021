@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tp7.Entities;
 
@@ -9,48 +10,93 @@ namespace Tp7.Logic
         
         public List<Region> GetAll()
         {
-            return context.Region.ToList();
+            try
+            {
+                return context.Region.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public void Add(Region newregion )
         {
-            context.Region.Add(newregion);
+            try
+            {
+                context.Region.Add(newregion);
 
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public void Delete(int id)
         {
-            //var regionAEliminar = context.Region.Single(r => r.RegionID == id);
-            var regionAEliminar = context.Region.Find(id);
-            context.Region.Remove(regionAEliminar);
-            context.SaveChanges();
+            try
+            {
+                //var regionAEliminar = context.Region.Single(r => r.RegionID == id);
+                var regionAEliminar = context.Region.Find(id);
+                context.Region.Remove(regionAEliminar);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
 
         }
 
         public void Update(Region region)
         {
-            var regionUpdate = context.Region.Find(region.RegionID);
+            try
+            {
+                var regionUpdate = context.Region.Find(region.RegionID);
 
-            regionUpdate.RegionDescription = region.RegionDescription;
+                regionUpdate.RegionDescription = region.RegionDescription;
 
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         
         }
 
         public int MaxID()
         {
-            int maxId = 0;
-            foreach (Region region in this.GetAll())
+            try
             {
-                if (maxId < region.RegionID)
+                int maxId = 0;
+                foreach (Region region in this.GetAll())
                 {
-                    maxId = region.RegionID;
+                    if (maxId < region.RegionID)
+                    {
+                        maxId = region.RegionID;
+                    }
+
                 }
+                return maxId;
 
             }
-            return maxId;
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            
         }
     }
 }

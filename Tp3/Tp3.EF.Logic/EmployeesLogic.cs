@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tp7.Entities;
 
@@ -8,35 +9,71 @@ namespace Tp7.Logic
     {
         public void Add(Employees newEmployee)
         {
-            context.Employees.Add(newEmployee);
+            try
+            {
+                context.Employees.Add(newEmployee);
 
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public void Delete(int id)
         {
-            var EmployeeAEliminar = context.Employees.Find(id);
-            context.Employees.Remove(EmployeeAEliminar);
-            context.SaveChanges();
+            try
+            {
+                var EmployeeAEliminar = context.Employees.Find(id);
+                context.Employees.Remove(EmployeeAEliminar);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public List<Employees> GetAll()
         {
-            return context.Employees.ToList();
+            try
+            {
+                return context.Employees.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public int MaxID()
         {
-            int maxId = 0;
-            foreach (Employees employee in this.GetAll())
+            try
             {
-                if (maxId < employee.EmployeeID)
+                int maxId = 0;
+                foreach (Employees employee in this.GetAll())
                 {
-                    maxId = employee.EmployeeID;
-                }
+                    if (maxId < employee.EmployeeID)
+                    {
+                        maxId = employee.EmployeeID;
+                    }
 
+                }
+                return maxId;
             }
-            return maxId;
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
 
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tp7.Entities;
 
@@ -8,36 +9,82 @@ namespace Tp7.Logic
     {
         public void Add(Categories newCategory)
         {
-            context.Categories.Add(newCategory);
+            try
+            {
+                context.Categories.Add(newCategory);
 
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            
         }
 
         public void Delete(int id)
         {
-            var categoryAEliminar = context.Categories.Find(id);
-            context.Categories.Remove(categoryAEliminar);
-            context.SaveChanges();
+            try
+            {
+                var categoryAEliminar = context.Categories.Find(id);
+                context.Categories.Remove(categoryAEliminar);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
 
         public List<Categories> GetAll()
         {
-            return context.Categories.ToList();
+            try
+            {
+                return context.Categories.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public void Update(Categories category)
         {
-            var categoryUpdate = context.Categories.Find(category.CategoryID);
+            try
+            {
+                var categoryUpdate = context.Categories.Find(category.CategoryID);
 
-            categoryUpdate.CategoryName = category.CategoryName;
-            categoryUpdate.Description = category.Description;
+                categoryUpdate.CategoryName = category.CategoryName;
+                categoryUpdate.Description = category.Description;
 
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public int MaxID()
         {
-            return context.Categories.Max(c => c.CategoryID); 
+            try
+            {
+                return context.Categories.Max(c => c.CategoryID);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+             
 
         }
     }
