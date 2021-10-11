@@ -16,15 +16,24 @@ namespace Tp8.WebApi.Controllers
         // GET api/values
         public IEnumerable<Object> Get()
         {
-           
-            List<Categories> categories = categoriesLogic.GetAll();
-
-             return categories.Select(s => new 
+            try
             {
-                Id = s.CategoryID,
-                CategoryName = s.CategoryName,
-                Description = s.Description
-            }).ToArray();
+                List<Categories> categories = categoriesLogic.GetAll();
+
+                return categories.Select(s => new
+                {
+                    Id = s.CategoryID,
+                    CategoryName = s.CategoryName,
+                    Description = s.Description
+                }).ToArray();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
+            
 
         }
 
@@ -32,20 +41,47 @@ namespace Tp8.WebApi.Controllers
         // POST api/values
         public void Post([FromBody] Categories categoryEntity)
         {
-            categoriesLogic.Add(categoryEntity);
+            try
+            {
+                categoriesLogic.Add(categoryEntity);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         // PUT api/values/5
         public void Put(int id, [FromBody] Categories categoryEntity)
         {
-            categoryEntity.CategoryID = id;
-            categoriesLogic.Update(categoryEntity);
+            try
+            {
+                categoryEntity.CategoryID = id;
+                categoriesLogic.Update(categoryEntity);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
 
         // DELETE api/values/5
         public void Delete(int id)
         {
-            categoriesLogic.Delete(id);
+            try
+            {
+                categoriesLogic.Delete(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
     }
 }
