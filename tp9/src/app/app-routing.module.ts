@@ -7,7 +7,9 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: "categories", component: CategoriesComponent},
-  {path: "form", component: FormComponent}
+  {path: "categories/new", component: FormComponent},
+  {path: "categories/:id", component: FormComponent}
+
 
 ];
 

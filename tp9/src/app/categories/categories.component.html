@@ -1,5 +1,9 @@
 <h1>Categorías</h1>
 
+<div *ngIf="!!mensaje" class="alert alert-primary" role="alert">
+    {{mensaje}} 
+  </div>
+
 <table class="table">
     <thead>
       <tr>
@@ -15,10 +19,10 @@
         <th scope="row">{{category.Id}}</th>
         <td>{{category.CategoryName}}</td>
         <td>{{category.Description}}</td>
-        <td><a href="">delete</a></td>
-        <td><a href="">update</a></td>      
+        <td><button class="btn btn-danger" (click)="delCategory(category.Id)">delete</button></td>
+        <td><a href="#" routerLink="/categories/{{category.Id}}">update</a></td>      
       </tr>      
     </tbody>
-    <a href="#" type="button" class="btn btn-primary" routerLink="/form">Insert new Category</a>
+    <a href="#" type="button" class="btn btn-primary" routerLink="/categories/new">Insert new Category</a>
     
   </table>
