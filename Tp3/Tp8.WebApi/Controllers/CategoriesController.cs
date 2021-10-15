@@ -7,9 +7,11 @@ using System.Web.Http;
 using Tp7.Data;
 using Tp7.Entities;
 using Tp7.Logic;
+using System.Web.Http.Cors;
 
 namespace Tp8.WebApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CategoriesController : ApiController
     {
         CategoriesLogic categoriesLogic = new CategoriesLogic();
