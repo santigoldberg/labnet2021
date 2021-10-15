@@ -33,14 +33,24 @@ namespace Tp8.WebApi.Controllers
             {
 
                 throw ex;
-            }
-           
+            }         
             
 
         }
+        // GET api/categories/Id
+        public Object Get(int id)
+        {
+            Categories category = categoriesLogic.GetById(id);
+            return new
+            {
+                Id = category.CategoryID,
+                CategoryName = category.CategoryName,
+                Description = category.Description
+            };
+        }
 
 
-        // POST api/values
+        // POST api/Categories
         public void Post([FromBody] Categories categoryEntity)
         {
             try

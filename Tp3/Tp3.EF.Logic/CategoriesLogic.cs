@@ -73,6 +73,10 @@ namespace Tp7.Logic
             
         }
 
+        public Categories GetById(int id)
+        {
+            return context.Categories.Find(id);
+        }
         public int MaxID()
         {
             try
